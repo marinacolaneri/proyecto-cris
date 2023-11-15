@@ -1,0 +1,23 @@
+{
+    "pieza1": {
+      "image": "../img/gorra.jpg",
+      "peso": 10
+    },
+    "pieza2": {
+      "image": "../img/gorra2.jpg",
+      "peso": 15
+    },
+    "pieza3": {
+      "image": "../img/gorra3.jpg",
+      "peso": 20
+    },
+    "pieza4": {
+      "image": "../img/gorra4.jpg",
+      "peso": 25
+    },
+    "pieza5": {
+      "image": "../img/gorra5.jpg",
+      "peso": 30
+    }
+  }
+  

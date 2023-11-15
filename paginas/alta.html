@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Alta de Remito</title>
+</head>
+<body>
+    <a href="#" class="boton-nuevo">Nuevo</a>
+    <div>
+        <h1>Formulario Nuevo</h1>
+        <form>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha"><br><br>
+            <label for="colada">Número de Colada:</label>
+            <input type="number" id="colada" name="colada"><br><br>
+            <label for="pieza">Modelo de la Pieza:</label>
+            <select id="pieza" name="pieza">
+                <option value="pieza1">Pieza 1</option>
+                <option value="pieza2">Pieza 2</option>
+                <option value="pieza3">Pieza 3</option>
+                <option value="pieza4">Pieza 4</option>
+                <option value="pieza5">Pieza 5</option>
+            </select><br><br>
+            <img id="imagen-pieza" src="" alt="Imagen de la Pieza"><br><br>
+            <span id="peso-pieza"></span><br><br>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad"><br><br>
+            <input type="submit" value="Confirmar">
+        </form>
+    </div>
+        
+
+<table id="piece-details">
+  <thead>
+    <tr>
+      <th>Orden</th>
+      <th>Modelo de la Pieza</th>
+      <th>Imagen</th>
+      <th>Cantidad</th>
+      <th>Peso de la Pieza</th>
+      <th>Total en kg</th>
+      <th>Colada Nro</th>
+      <th>Fecha</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table rows will be dynamically added here -->
+  </tbody>
+  <tfoot>
+    <tr>
+        <td colspan="5"></td>
+        <td id="total-remito">Total Remito: 0 kg</td>
+        <td colspan="4"></td>
+    </tr>
+</tfoot>
+</table>
+
+<!-- Botones adicionales -->
+<div>
+  <button id="atras">Atrás</button>
+  <button id="eliminar-remito">Eliminar Remito</button>
+  <button id="compartir">Compartir</button>
+  <button id="imprimir">Imprimir</button>
+</div>
+
+<script src="../main.js"></script>
