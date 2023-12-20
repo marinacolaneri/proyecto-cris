@@ -62,9 +62,50 @@
 <!-- Botones adicionales -->
 <div>
   <button id="atras">Atrás</button>
+  <button id="generar remito">Generar Remito</button>
   <button id="eliminar-remito">Eliminar Remito</button>
   <button id="compartir">Compartir</button>
   <button id="imprimir">Imprimir</button>
 </div>
 
-<script src="../main.js"></script>
+
+
+  // Retrieve the selected remito value from localStorage
+  var selectedRemito = localStorage.getItem('selectedRemito');
+
+  // Use the selected remito value to perform any necessary actions
+  // For example, you can pre-populate fields or make API calls based on the selected remito
+
+  // Clear the selected remito value from localStorage
+  localStorage.removeItem('selectedRemito');
+ 
+  
+  <script>
+    // Recuperar el valor actual de remittanceNumber desde localStorage
+    var remittanceNumber = parseInt(localStorage.getItem('remittanceNumber')) || 1;
+  
+    document.getElementById('generar-remito').addEventListener('click', function () {
+      // Lógica para generar el remito
+      var generatedRemittanceNumber = remittanceNumber; // Utilizar el valor actual de remittanceNumber
+      remittanceNumber++; // Incrementar el valor para el próximo remito
+  
+      // Guardar el valor actualizado en localStorage
+      localStorage.setItem('remittanceNumber', remittanceNumber);
+  
+      // Resto de la lógica...
+  
+      alert('Remittance generated. Remittance number: ' + generatedRemittanceNumber);
+      var remitoInfo = {
+        remittanceNumber: generatedRemittanceNumber,
+        // Otros detalles del remito que deseas almacenar
+      };
+      localStorage.setItem('remitoInfo', JSON.stringify(remitoInfo));
+  
+      // ... (resto de la lógica)
+    });
+  
+    
+  </script>
+   <script src="../main.js"></script>
+</body>
+</html>

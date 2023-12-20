@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BAJA DE REMITO</title>
+</head>
+<body>
+  <h1>BAJA DE REMITO</h1>
+  <select id="remitoSelect">
+    <option value="remito1">Remito 1</option>
+    <option value="remito2">Remito 2</option>
+    <!-- Add more options dynamically based on the generated remito numbers -->
+</select>
+
+  <br><br>
+  <button onclick="goBack()">Atrás</button>
+  <button onclick="eliminarRemito()">Eliminar Remito</button>
+  <button onclick="compartir()">Compartir</button>
+  <button onclick="imprimir()">Imprimir</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Obtener la información del remito desde localStorage
+    var remitoInfoString = localStorage.getItem('remitoInfo');
+
+    if (remitoInfoString) {
+      var remitoInfo = JSON.parse(remitoInfoString);
+
+      // Utiliza la información del remito como sea necesario
+      console.log('Remito Number:', remitoInfo.remittanceNumber);
+      // Mostrar otros detalles del remito en la página...
+    }
+  });
+   
+    function goBack() {
+      // Logic to go back
+    }
+    function eliminarRemito() {
+      // Logic to delete the remito
+    }
+    function compartir() {
+      // Logic to share the remito
+    }
+    function imprimir() {
+      // Logic to print the remito
+    }
+
+    // Event listener for remito selection change
+    document.getElementById('remitoSelect').addEventListener('change', function () {
+      var selectedRemito = this.value;
+      localStorage.setItem('selectedRemito', selectedRemito); // Store the selected remito value in localStorage
+      window.location.href = 'alta.html'; // Redirect to alta.html
+    });
+  </script>
+  <script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BAJA DE REMITO</title>
+</head>
+<body>
+  <h1>BAJA DE REMITO</h1>
+  <select id="remitoSelect">
+    <option value="remito1">Remito 1</option>
+    <option value="remito2">Remito 2</option>
+    <!-- Add more options dynamically based on the generated remito numbers -->
+</select>
+
+<table id="piece-details">
+    <thead>
+      <tr>
+        <th>Remito orden</th>
+        <th>Modelo de la Pieza</th>
+        <th>Imagen</th>
+        <th>Cantidad</th>
+        <th>Peso de la Pieza</th>
+        <th>Total en kg</th>
+        <th>Colada Nro</th>
+        <th>Fecha</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+        <!-- Table rows will be dynamically added here -->
+      </tbody>
+      <tfoot>
+        <tr>
+            <td colspan="5"></td>
+            <td id="total-remito">Total Remito: 0 kg</td>
+            <td colspan="4"></td>
+        </tr>
+    </tfoot>
+    </table>
+    <br><br>
+  <button onclick="goBack()">Atrás</button>
+  <button onclick="eliminarRemito()">Eliminar Remito</button>
+  <button onclick="compartir()">Compartir</button>
+  <button onclick="imprimir()">Imprimir</button>
+
+  <script>
+    function goBack() {
+      // Logic to go back
+    }
+    function eliminarRemito() {
+      // Logic to delete the remito
+    }
+    function compartir() {
+      // Logic to share the remito
+    }
+    function imprimir() {
+      // Logic to print the remito
+    }
+  
+    
+  </script>
+</body>
+</html>

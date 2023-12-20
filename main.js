@@ -1,4 +1,29 @@
 var data; // Variable global para almacenar los datos cargados desde piesas.json
+var remittanceNumber = 1; // Initialize the remittance number
+
+document.getElementById('generar remito').addEventListener('click', function () {
+  // Logic to generate the remittance number
+  var generatedRemittanceNumber = remittanceNumber; // Use the current remittance number
+  remittanceNumber++; // Increment the remittance number for the next remittance
+  alert('Remittance generated. Remittance number: ' + generatedRemittanceNumber);
+  var remitoInfo = {
+    remittanceNumber: generatedRemittanceNumber,
+    // Otros detalles del remito que deseas almacenar
+  };
+  localStorage.setItem('remitoInfo', JSON.stringify(remitoInfo));
+
+
+  // Clear the form fields
+  document.getElementById('pieza').value = '';
+  document.getElementById('cantidad').value = '';
+
+  // Clear the table rows
+  document.querySelector('#piece-details tbody').innerHTML = '';
+
+  // Reset the total
+  updateTotal();
+});
+
 
 document.getElementById('pieza').addEventListener('change', function () {
   var selectedPieza = this.value;
@@ -130,10 +155,10 @@ function updateTotal() {
   var totalRemitoElement = document.getElementById('total-remito');
   totalRemitoElement.textContent = 'Total Remito: ' + total.toFixed(2) + ' kg';
 }
-
 document.getElementById('atras').addEventListener('click', function () {
-  // Lógica para ir atrás
+  window.history.back();
 });
+
 
 document.getElementById('eliminar-remito').addEventListener('click', function () {
   // Lógica para eliminar el remito
@@ -149,3 +174,64 @@ document.getElementById('compartir').addEventListener('click', function () {
 document.getElementById('imprimir').addEventListener('click', function () {
   // Lógica para imprimir
 });
+// Logic to confirm the remito and generate the remito number
+// Logic to confirm the remittance and generate the remittance number
+// Logic to confirm the remittance and generate the remittance number
+function confirmRemittance() {
+  // Other logic for confirming the remittance
+  var selectedRemittanceNumber = remittanceNumber; // Use the current remittance number
+  remittanceNumber++; // Increment the remittance number for the next remittance
+  alert('Remittance confirmed. Remittance number: ' + selectedRemittanceNumber);
+}
+// Recuperar el valor actual de remittanceNumber desde localStorage
+var remittanceNumber = parseInt(localStorage.getItem('remittanceNumber')) || 1;
+
+document.getElementById('generar-remito').addEventListener('click', function () {
+  // Lógica para generar el remito
+  var generatedRemittanceNumber = remittanceNumber; // Utilizar el valor actual de remittanceNumber
+  remittanceNumber++; // Incrementar el valor para el próximo remito
+
+  // Guardar el valor actualizado en localStorage
+  localStorage.setItem('remittanceNumber', remittanceNumber);
+
+
+
+  alert('Remittance generated. Remittance number: ' + generatedRemittanceNumber);
+
+  // Obtener la lista actual de remitos desde localStorage
+  var remitosList = JSON.parse(localStorage.getItem('remitosList')) || [];
+
+  // Agregar el nuevo remito a la lista
+  remitosList.push({
+    remittanceNumber: generatedRemittanceNumber,
+    // Otros detalles del remito que deseas almacenar
+  });
+
+  // Guardar la lista actualizada en localStorage
+  localStorage.setItem('remitosList', JSON.stringify(remitosList));
+
+
+});
+
+// Lógica para confirmar el remito y generar el número de remito
+function confirmRemittance() {
+  // Otra lógica para confirmar el remito
+  var selectedRemittanceNumber = remittanceNumber; // Utilizar el valor actual de remittanceNumber
+  remittanceNumber++; // Incrementar el valor para el próximo remito
+  alert('Remittance confirmed. Remittance number: ' + selectedRemittanceNumber);
+}
+
+// Otras funciones y lógica...
+
+// Evento que se dispara cuando se selecciona un remito en baja.html
+document.getElementById('remitoSelect').addEventListener('change', function () {
+  var selectedIndex = this.value;
+  var remitosList = JSON.parse(localStorage.getItem('remitosList')) || [];
+
+  if (remitosList[selectedIndex]) {
+    // Aquí puedes usar remitosList[selectedIndex] para acceder a los detalles del remito seleccionado
+    console.log('Detalles del Remito:', remitosList[selectedIndex]);
+  }
+});
+
+
